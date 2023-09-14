@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "env:dev": "cross-env NODE_ENV=development",
-    "dev": "bun env:dev && bun run --watch src/index.js",
+    "dev": "bun env:dev && bun --watch src/index.js",
     "dev:db:up": "docker compose -p urs-overlay-dev -f .docker/docker-compose.dev.yml --env-file config/.env.development up -d",
     "dev:db:down": "docker compose -f .docker/docker-compose.dev.yml down"
   },
