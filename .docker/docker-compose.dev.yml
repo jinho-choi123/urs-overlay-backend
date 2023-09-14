@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo 
+    container_name: urs-overlay-mongo
+    restart: unless-stopped
+    ports: 
+      - ${MONGO_PORT:-27017}:27017
+    volumes:
+      - urs-overlay-mongo-data:/data/db 
+    environment:
+      - name=value
+    
+volumes:
+  urs-overlay-mongo-data:
+    external: true

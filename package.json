@@ -1,0 +1,23 @@
+{
+  "name": "urs-overlay-backend",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "env:dev": "cross-env NODE_ENV=development",
+    "dev": "bun env:dev && bun  --watch src/index.js",
+    "dev:db:up": "docker compose -p urs-overlay-dev -f .docker/docker-compose.dev.yml --env-file config/.env.development up -d",
+    "dev:db:down": "docker compose -f .docker/docker-compose.dev.yml down"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.1"
+  }
+}
